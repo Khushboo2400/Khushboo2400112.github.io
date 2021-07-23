@@ -1,0 +1,38 @@
+.container {
+  width:310px;
+  border-radius: 20%;
+  background-color:rgba(189, 195, 199,0.6);
+  position:absolute;
+  
+  }
+
+input[type=text] {
+  width: 230px;
+  padding: 12px;
+  border-radius: 20%;
+  margin: 0px 0;
+  background-color:rgba(189, 195, 199,0.1);
+  display: inline-block;
+  box-sizing: border-box;
+  border-right-width: 0px;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-bottom-width: 0px;
+}
+ input[type=submit] {
+   width: 70px;
+   height :30px;
+   border-radius: 20%;
+   margin: 0px 0;
+   display: inline-block;
+   box-sizing: border-box;
+   background-color: blue;
+   color: white;
+   border: none;
+  }
+
+
+input[type=submit]:hover {
+   background:#F3F0E3;
+  opacity: 0.8;
+}
