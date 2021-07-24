@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html class="root" style="--scrollbarWidth: 15px;">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="topnav.css">
+<link rel="stylesheet" href="siteheader.css">
 <link rel="stylesheet" href="gradient.css">
 <link rel="stylesheet" href="form.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +12,105 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet"> 
 <style>
+.root{
+    box-sizing: border-box;
+}
+
+html{
+    --fontFamily: "sohne-var","Helvetica Neue","Arial",sans-serif;
+    --fontWeightLight: 200;
+    --fontWeightNormal: 300;
+    --fontWeightSemibold: 425;
+    --fontWeightBold: 500;
+    --codeFontFamily: "SourceCodePro";
+    --sourceCodeFont: 500 14px/1.714285714 var(--codeFontFamily);
+    --ctaFont: var(--fontWeightSemibold) 15px/1.6 var(--fontFamily);
+    --inputFont: var(--fontWeightNormal) 15px/1.6 var(--fontFamily);
+    --cardShadowXSmall: 0 2px 5px -1px rgba(50,50,93,0.25),0 1px 3px -1px rgba(0,0,0,0.3);
+    --cardShadowSmall: 0 6px 12px -2px rgba(50,50,93,0.25),0 3px 7px -3px rgba(0,0,0,0.3);
+    --cardShadowMedium: 0 13px 27px -5px rgba(50,50,93,0.25),0 8px 16px -8px rgba(0,0,0,0.3);
+    --cardShadowLarge: 0 30px 60px -12px rgba(50,50,93,0.25),0 18px 36px -18px rgba(0,0,0,0.3);
+    --cardShadowLargeInset: inset 0 30px 60px -12px rgba(50,50,93,0.25),inset 0 18px 36px -18px rgba(0,0,0,0.3);
+    --cardShadowXLarge: 0 50px 100px -20px rgba(50,50,93,0.25),0 30px 60px -30px rgba(0,0,0,0.3);
+    --cardShadowXSMallMargin: 2px;
+    --cardShadowSmallMargin: 8px;
+    --cardShadowMediumMargin: 16px;
+    --cardShadowLargeMargin: 32px;
+    --cardShadowXLargeMargin: 48px;
+    --cardBorderRadius: 8px;
+    --scrollbarOffset: 10px;
+    --angleNormal: -6deg;
+    --angleStrong: -12deg;
+    --angleNormalSin: 0.106;
+    --angleStrongSin: 0.212;
+    --fixedNavHeight: 60px;
+    --fixedNavSpacing: 48px;
+    --fixedNavScrollMargin: calc(var(--fixedNavHeight) + var(--fixedNavSpacing));
+    --hoverTransition: 150ms cubic-bezier(0.215,0.61,0.355,1);
+    --focusBoxShadow: 0 0 0 2px #4d90fe,inset 0 0 0 2px hsla(0,0%,100%,0.9);
+}
+html {
+    --layoutWidth: var(--layoutWidthMax);
+    --gutterWidth: calc(var(--windowWidth)/2 - var(--layoutWidth)/2);
+}
+html {
+    --columnPaddingXLarge: 112px;
+    --columnCountMax: 4;
+}
+html {
+    --columnPaddingMedium: 32px;
+    --columnPaddingLarge: 64px;
+    --columnPaddingXLarge: 64px;
+    --columnCountMax: 2;
+}
+html {
+ --gutterWidth:16px;
+ --scrollbarWidth:0px;
+ --windowWidth:calc(100vw - var(--scrollbarWidth));
+ --layoutWidth:calc(var(--windowWidth) - var(--gutterWidth)*2);
+ --layoutWidthMax:1080px;
+ --viewportWidthSmall:375;
+ --viewportWidthMedium:600;
+ --viewportWidthLarge:1112;
+ --viewportScale:calc(var(--windowWidth)/var(--viewportWidthLarge));
+ --paddingTop:160px;
+ --paddingBottom:160px;
+ --columnPaddingNone:0;
+ --columnPaddingNormal:16px;
+ --columnPaddingMedium:16px;
+ --columnPaddingLarge:16px;
+ --columnPaddingXLarge:16px;
+ --rowGapNormal:8px;
+ --rowGapMedium:24px;
+ --rowGapLarge:32px;
+ --rowGapXLarge:64px;
+ --rowGapXXLarge:88px;
+ --rowGap:var(--rowGapNormal);
+ --columnCountMax:1;
+ --columnWidth:calc(var(--layoutWidth)/var(--columnCountMax));
+ --columnMaxWidth:calc(var(--layoutWidthMax)*0.25);
+ --copyMaxWidth:calc(var(--columnMaxWidth)*3)
+}
+@media (min-width:600px) {
+ html {
+  --columnPaddingMedium:32px;
+  --columnPaddingLarge:64px;
+  --columnPaddingXLarge:64px;
+  --columnCountMax:2
+ }
+}
+@media (min-width:900px) {
+ html {
+  --columnPaddingXLarge:112px;
+  --columnCountMax:4
+ }
+}
+@media (min-width:1112px) {
+ html {
+  --layoutWidth:var(--layoutWidthMax);
+  --gutterWidth:calc(var(--windowWidth)/2 - var(--layoutWidth)/2)
+ }
+}
 
 .HomepageHeader__title{
     font-family: 'PT Serif', serif;   
@@ -50,23 +149,168 @@
     background-color:rgba(236, 236, 236,0.7);
     
 }
+.topnav {
 
+--backgroundColor: none;
+--linkColor: #fff;
+--linkHoverColor: var(--linkColor);
+--linkHoverOpacity: 0.6;
+--buttonColor: hsla(0,0%,100%,0.2);
+--buttonHoverColor: hsla(0,0%,100%,0.4);
+--accentColor: #fff;
+--knockoutColor: #fff;
+--textColor: #fff;
+--guideSolidColor: rgba(66,71,112,0.06);
+--guideDashedColor: rgba(66,71,112,0.09);
+--titleColor: #fff;
+--maskFadeColor: rgba(0,0,0,0.4);
+--navColor: #fff;
+--navHoverColor: #fff;
+--navHoverOpacity: 0.6;
+--stripeBackground: #fff;
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  width : 100%
+  padding-left:16px
+  overflow: hidden;
+ 
+}
 </style>
 </head>
-<body>
+<body class="MktBody"  >
 <div class="block"></div>
-<div class="topnav" ><header><nav >  
-<ul>
- <li><img class="logo-img" src="tripuphr.png" width="150" height="30" ALT="align box" ALIGN=CENTER></li>
- <li>  <a class="active" href="#home">HOME</a></li>  
- <li>  <a href="#payroll">PAYROLL</a></li>  
- <li>  <a href="#benefits">BENEFITS</a></li>  
- <li>  <a href="#benefits">PRICING</a></li>  
- <li>  <a href="#workwithus">WORK WITH US</a></li>  
-<li> <div class="topnav-right"><a href="#signup" >SIGN UP</a></div> </li> 
-</ul>
-</nav></header>
+<header class="SiteHeader theme--Transparent variant--Overlay SiteHeader--hasGuides" style="--siteMenuArrowOffset:-128px;">
+<div class='SiteHeader__guidesContainer'>
+    <div
+  class='
+    Guides
+    SiteHeader__guides
+  '
+  aria-hidden='true'
+>
+  <div class='Guides__container'>
+    <div class='Guides__guide'></div>
+    <div class='Guides__guide'></div>
+    <div class='Guides__guide'></div>
+    <div class='Guides__guide'></div>
+    <div class='Guides__guide'></div>
+  </div>
 </div>
+  </div>
+
+ <div class='SiteHeader__container'>
+   <div class='SiteHeader__navContainer'>
+<a href='/en-in'
+          class='SiteHeader__logoLink'
+          data-js-controller="AnalyticsButton"
+          data-analytics-category='Navigation'
+          data-analytics-action='Clicked'
+          data-analytics-label='Stripe Logo'
+        >
+<svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" width="200" height="40" class="UserLogo variant-- ">
+<title>TRIPPUP HR logo logo</title>    	
+ <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="25" id="svg_2" y="27.5" x="28" stroke-width="0" stroke="#000" fill="#ffffff">TRIPPUP HR</text>
+</a>
+	
+ <nav class='SiteHeaderNav'>
+  <ul class='SiteHeaderNav__list'>
+    <li class='SiteHeaderNavItem'>  
+     <button  class='SiteHeaderNavItem__link' aria-haspopup="true" aria-expanded="false" data-js-target-list='SiteHeader.dropdownTriggers'>
+	HOME</button></li>
+
+  <li class='SiteHeaderNavItem'>
+  
+    <button
+      class='SiteHeaderNavItem__link'
+      aria-haspopup="true"
+      aria-expanded="false"
+      data-js-target-list='SiteHeader.dropdownTriggers'
+    >PAYROLL</button>
+</li>
+ <li class='SiteHeaderNavItem'> <button
+      class='SiteHeaderNavItem__link'
+      aria-haspopup="true"
+      aria-expanded="false"
+      data-js-target-list='SiteHeader.dropdownTriggers'>BENEFITS</button> </li>  
+
+ <li class='SiteHeaderNavItem'><button
+      class='SiteHeaderNavItem__link'
+      aria-haspopup="true"
+      aria-expanded="false"
+      data-js-target-list='SiteHeader.dropdownTriggers'>PRICING</button> </li>  
+  </li>  
+ <li class='SiteHeaderNavItem'> <button
+      class='SiteHeaderNavItem__link'
+      aria-haspopup="true"
+      aria-expanded="false"
+      data-js-target-list='SiteHeader.dropdownTriggers'>WORK WITH US</button> 
+</li>  
+</ul>
+</nav>
+   <nav class='SiteHeader__ctaNav'>
+          <a
+  class='
+    CtaButton
+    variant--Button
+    CtaButton--arrow'
+     href='#home'
+  
+  data-js-controller='AnalyticsButton'
+    
+  data-analytics-category='Buttons'
+  data-analytics-action='Clicked'
+  data-analytics-label='Login'>
+<template
+        data-mount-target=".DashboardLoginButton__label"
+        data-mount-on-state="logged-out">
+        Sign in
+      </template>
+      <template
+        data-mount-target=".DashboardLoginButton__label"
+        data-mount-on-state="logged-in">
+        Dashboard
+      </template>
+    
+    <span class="DashboardLoginButton__label">Sign in</span>&nbsp;<svg
+  class="HoverArrow"
+  width="10"
+  height="10"
+  viewBox="0 0 10 10"
+  aria-hidden="true"
+>
+<g fill-rule="evenodd">
+    
+      <path class="HoverArrow__linePath" d="M0 5h7" />
+      <path class="HoverArrow__tipPath" d="M1 1l4 4-4 4" />
+    
+  </g>
+</svg></a>
+        </nav>
+
+        <nav class='SiteHeader__menuNav'>
+          <a
+  class='MenuButton'
+  href='#'
+  title='Open mobile navigation'
+  data-js-target='SiteHeader.menuButton'
+>
+  <svg width="16" height="10" viewBox="0 0 16 10">
+    <title>Open mobile navigation</title>
+    <g fill="var(--knockoutColor)" fill-rule="evenodd">
+      <rect y="8" width="16" height="2" rx="1"/>
+      <rect y="4" width="16" height="2" rx="1"/>
+      <rect width="16" height="2" rx="1"/>
+    </g>
+  </svg>
+</a>
+        </nav>
+      
+    </div>
+  </div>
+
+</header>
+
 
 <div class="HomepageHeader__title" >
 <table>
